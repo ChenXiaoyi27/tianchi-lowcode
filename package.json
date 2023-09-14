@@ -24,7 +24,8 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-tianchi-lowcode",
+    "start": "egg-scripts start --title=egg-server-tianchi-lowcode",
+    "start_bak": "egg-scripts start --daemon --title=egg-server-tianchi-lowcode",
     "stop": "egg-scripts stop --title=egg-server-tianchi-lowcode",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
