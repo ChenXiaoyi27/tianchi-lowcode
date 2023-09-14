@@ -46,8 +46,8 @@ module.exports = appInfo => {
 
   config.sequelize = {
     dialect: 'mysql',
-    host: 'mysql',
-    port: 3306,
+    host: '114.55.85.81', // 本地docker启动：mysql；本地开发：127.0.0.1
+    port: 3307, // 本地docker启动：3306；本地开发：3306
     password: '123456',
     database: 'lowcode',
   };
