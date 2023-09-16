@@ -40,14 +40,14 @@ class PageService extends Service {
       },
     });
   }
-  // 先不实现
-  // async modify(page, version) {
-  //   return this.page.update({ lastName: 'Doe' }, {
-  //     where: {
-  //       lastName: null,
-  //     },
-  //   });
-  // }
+  // 修改
+  async modify(page_id, newData) {
+    return this.page.update(newData, {
+      where: {
+        page_id,
+      },
+    });
+  }
   async deletePage(page_id) {
     return this.page.destroy({
       where: {

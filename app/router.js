@@ -18,7 +18,7 @@ module.exports = app => {
   router.post('/api/page/list', controller.page.list);
   router.get('/api/page/lock/get', controller.page.getLock);
   router.get('/api/page/lock', controller.page.lock);
-  // router.post('/api/page/modify', controller.page.modify); // 先不实现
+  router.post('/api/page/modify', controller.page.modify);
   router.get('/api/page/delete', controller.page.deletePage);
   router.post('/api/version/add', controller.version.add);
   router.get('/api/version/schema', controller.version.getSchema);

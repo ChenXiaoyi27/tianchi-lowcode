@@ -32,6 +32,9 @@ class PageController extends Controller {
     const { ctx } = this;
     const { site_id } = ctx.request.body;
     const list = await ctx.service.page.list({ site_id });
+    for (const li of list) {
+      li.dataValues.version = await ctx.service.version.list(li.page_id);
+    }
     ctx.body = {
       success: true,
       message: null,
@@ -60,9 +63,18 @@ class PageController extends Controller {
       data: null,
     };
   }
-  // async modify() {
-  //   // 先不实现
-  // }
+  // 修改
+  async modify() {
+    const { ctx } = this;
+    const { page_id, newData } = ctx.request.body;
+    const result = await ctx.service.page.modify(page_id, newData);
+    ctx.logger.info('page.modify result', result);
+    ctx.body = {
+      success: true,
+      message: null,
+      data: null,
+    };
+  }
   // 删除单个页面
   async deletePage() {
     const { ctx } = this;
