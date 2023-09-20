@@ -25,7 +25,9 @@ module.exports = app => {
   router.get('/api/version/list', controller.version.list);
   router.post('/api/site/add', controller.site.add);
   router.post('/api/site/list', controller.site.list);
-  router.get('/api/site/info',controller.site.info);
+  router.get('/api/site/info', controller.site.info);
   router.get('/api/group/list', controller.group.list);
+  // 前端工程中使用的资产包配置文件放到oss维护，这个接口是用于转发到oss获取文件的
+  router.get('/api/outside/assets/json', controller.outside.assets);
   /** lowcode end */
 };
